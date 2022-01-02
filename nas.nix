@@ -26,7 +26,7 @@
   virtualisation = {
     libvirtd.enable = true;
     podman.enable = true;
-  }
+  };
   
   environment.systemPackages = with pkgs; [
     bash
@@ -90,14 +90,16 @@
     podman.gid   = 1006;
     storage.gid  = 1007;
     vault.gid    = 1008;
-  }
+  };
 
   # Users
   users.mutableUsers = false;
+  
+
   users.users.nikolai = {
     uid = 1000;
     isNormalUser = true;
-    home = "/home/nikolai"
+    home = "/home/nikolai";
     extraGroups = [ 
         "wheel"
         "networkmanager"
